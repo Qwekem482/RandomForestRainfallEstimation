@@ -38,3 +38,14 @@ Bởi vì dữ liệu được cung cấp mất cân bằng nghiêm trọng (s�
 # Dữ liệu kiểm thử
 
 Dữ liệu kiểm thử sẽ được đưa vào bộ phân loại (RF1) để phân loại. Các dữ liệu kiểm thử sau khi được phân loại thì lấy những dữ liệu thuộc nhóm 2, 3 để đưa vào các bộ ước lượng (RF2, RF3) tương ứng để ước tính lượng mưa. Kết quả sẽ được so sánh với lượng mưa mà IMERG đưa ra.
+
+# Chạy mô hình
+Build và chạy file RandomForest.py để chạy mô hình
+
+•	Build và chạy file RandomForest.py để chạy mô hình
+
+•	Sửa đường dẫn đến dataset trong file ImportData.py
+
+•	Code trong file Jupyter Notebook giống hệt với code trong các file python
+
+•	Thư mục Jupyter Notebook thiếu file ImportData.py
