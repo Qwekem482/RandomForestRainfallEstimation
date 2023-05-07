@@ -27,3 +27,5 @@ These hyperparemeter will be adjust for tunning process
 # Run
 Run RandomForest.py to Estimate Rainfall
 Modify dataset location in ImportData.py
+Code in Jupyter Notebook files are similar to code in python file, except ImportData.py
+Jupyter Notebook folder missing ImportData.py
