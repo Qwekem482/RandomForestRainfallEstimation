@@ -1,4 +1,9 @@
+
+[English Here](https://github.com/Qwekem482/Random_Forest_Rainfall-Estimation/blob/main/README_en.md)
+
 # Mô hình vận hành
+
+![image](https://user-images.githubusercontent.com/80797630/236696107-0cb2dfc8-f1b9-4745-b093-721107336ee6.png)
 
 # Dữ liệu huấn luyện và điều chỉnh (train/validate data)
 
