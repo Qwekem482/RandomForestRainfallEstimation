@@ -1,4 +1,8 @@
- Train and Validate Data
+# Model
+
+![RandomForest drawio](https://user-images.githubusercontent.com/80797630/236696148-2991574d-8454-4e86-a1c3-74a5396e757e.png)
+
+# Train and Validate Data
 Train and Validate data ("train data" for short) is divided into 3 group according to rain amount to train classification model (RF1):
 
 •	Group 1: No rain (0 mm/h)
