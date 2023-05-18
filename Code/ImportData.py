@@ -26,8 +26,8 @@ def get_data():
     data.dropna(inplace=True)
 
     conditions = [(data['value'] == 0), 
-                  ((data['value'] > 0) & (data['value'] <= 2.08)), 
-                  (data['value'] > 2.08)]
+                  ((data['value'] > 0) & (data['value'] <= 0.625)), 
+                  (data['value'] > 0.625)]
     
     values = [0, 1, 2]
     data['rain_group'] = np.select(conditions, values)
@@ -49,28 +49,6 @@ def resampling(x_train, y_train):
 
 
 
-# Get data for tunning classification
-def get_tuning_class_data():
-    data = get_data()
-
-    train_data = data[data['datetime'] < valid_date]
-
-    valid_data = data[(data['datetime'] >= valid_date) &
-                      (data['datetime'] < test_date)]
-
-    x_train = train_data[x_param]
-    y_train = train_data['rain_group']
-
-    x_train, y_train = resampling(x_train, y_train)
-
-    x_valid = valid_data[x_param]
-    y_valid = valid_data['rain_group']
-
-    return x_train, y_train, x_valid, y_valid
-
-
-
-
 
 # Get data for tunning classification 2
 def tuning_class_data():
@@ -88,33 +66,6 @@ def tuning_class_data():
 
 
 
-
-# Get data for tunning regression
-def get_tuning_reg_data(strong:bool):
-    data = get_data()
-
-    if strong:
-        train_data = data[(data['datetime'] < valid_date) &
-                          (data['rain_group'] == 2)]
-        
-        valid_data = data[(data['datetime'] >= valid_date) &
-                          (data['datetime'] < test_date) &
-                          (data['rain_group'] == 2)]
-    elif not strong:
-        train_data = data[(data['datetime'] < valid_date) &
-                          (data['rain_group'] == 1)]
-        
-        valid_data = data[(data['datetime'] >= valid_date) &
-                          (data['datetime'] < test_date) &
-                          (data['rain_group'] == 1)]
-
-    x_train = train_data[x_param]
-    y_train = train_data['value']
-
-    x_valid = valid_data[x_param]
-    y_valid = valid_data['value']
-
-    return x_train, y_train, x_valid, y_valid
 
 
 
@@ -143,7 +94,7 @@ def tuning_reg_data(strong:bool):
 def get_est_data():
     data = get_data()
 
-    train_data = data[data['datetime'] < valid_date]
+    train_data = data[data['datetime'] < test_date]
     test_data = data[data['datetime'] >= test_date]
 
     return train_data, test_data

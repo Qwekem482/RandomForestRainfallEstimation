@@ -37,8 +37,8 @@ class_model = RandomForestClassifier(n_estimators=3100,
                                      random_state=1)
 class_model.fit(x_class_train, y_class_train)
 
-class_data = class_model.predict(x_class_test)
-test_data['classification'] = class_data
+class_predict = class_model.predict(x_class_test)
+test_data['classification'] = class_predict
 
 
 
@@ -118,17 +118,17 @@ print(r_regression(x_strong_test, strong_predict))
 print('Weak Pearson:')
 print(r_regression(x_weak_test, weak_predict))
 print('Classification Pearson')
-print(r_regression(class_data, y_class_test))
+print(r_regression(x_class_test, class_predict))
+print('All Pearson')
+print(r_regression(result[x_param], result['RF']))
 
 #Visualization
 #Plot 1
 pt.subplot(1, 2, 1)
 pt.plot([-5000, 3000], [-5000, 3000],  c='black')
 pt.scatter(result['RF'], result['value'], c='blue', s=1)
-pt.axhline(y=0, c='red')
-pt.axvline(x=0, c='red')
-pt.xlim(-1, 100)
-pt.ylim(-1, 100)
+pt.xlim(-1, 60)
+pt.ylim(-1, 60)
 pt.xlabel("Rain Gauge Value")
 pt.ylabel("Random Forest Value")
 
@@ -136,10 +136,8 @@ pt.ylabel("Random Forest Value")
 pt.subplot(1, 2, 2)
 pt.plot([-5000, 3000], [-5000, 3000],  c='black')
 pt.scatter(result['IMERG'], result['value'], c='blue', s=1)
-pt.axhline(y=0, c='red')
-pt.axvline(x=0, c='red')
-pt.xlim(-1, 100)
-pt.ylim(-1, 100)
+pt.xlim(-1, 60)
+pt.ylim(-1, 60)
 pt.xlabel("Rain Gauge Value")
 pt.ylabel("IMERG Value")
 
