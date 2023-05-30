@@ -12,9 +12,9 @@ Dữ liệu huấn luyện ban đầu sẽ được chia nhóm dựa theo lượ
 
 •	Nhóm 1: Không mưa (0 mm/h)
 
-•	Nhóm 2: Mưa nhỏ (dưới 0.675 mm/h)
+•	Nhóm 2: Mưa nhỏ (dưới 0.625 mm/h)
 
-•	Nhóm 3: Mưa to (trên 0.675 mm/h)
+•	Nhóm 3: Mưa to (trên 0.625 mm/h)
 
 Sau đó, những dữ liệu này sẽ được sao chép làm 2 bản. Bản thứ nhất sẽ được đưa vào huấn luyện bộ phân loại (RF1). Bản thứ 2 được chia làm 3 phần tương ứng với 3 nhóm mưa. Những dữ liệu nhóm 2 sẽ được dùng để huấn luyện và điều chỉnh bộ ước lượng mưa nhỏ (RF2), dữ liệu nhóm 3 sẽ được dùng để huấn luyện và điều chỉnh bộ ước lượng mưa to.
 
