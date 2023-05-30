@@ -3,7 +3,8 @@
 
 # Mô hình vận hành
 
-![image](https://user-images.githubusercontent.com/80797630/236696107-0cb2dfc8-f1b9-4745-b093-721107336ee6.png)
+![RandomForest](https://github.com/Qwekem482/RandomForestRainfallEstimation/assets/80797630/f6a79cd7-7870-4bac-8346-12a26a818249)
+
 
 # Dữ liệu huấn luyện và điều chỉnh (train/validate data)
 
@@ -11,9 +12,9 @@ Dữ liệu huấn luyện ban đầu sẽ được chia nhóm dựa theo lượ
 
 •	Nhóm 1: Không mưa (0 mm/h)
 
-•	Nhóm 2: Mưa nhỏ (dưới 2.8 mm/h)
+•	Nhóm 2: Mưa nhỏ (dưới 0.675 mm/h)
 
-•	Nhóm 3: Mưa to (trên 2.8 mm/h)
+•	Nhóm 3: Mưa to (trên 0.675 mm/h)
 
 Sau đó, những dữ liệu này sẽ được sao chép làm 2 bản. Bản thứ nhất sẽ được đưa vào huấn luyện bộ phân loại (RF1). Bản thứ 2 được chia làm 3 phần tương ứng với 3 nhóm mưa. Những dữ liệu nhóm 2 sẽ được dùng để huấn luyện và điều chỉnh bộ ước lượng mưa nhỏ (RF2), dữ liệu nhóm 3 sẽ được dùng để huấn luyện và điều chỉnh bộ ước lượng mưa to.
 
